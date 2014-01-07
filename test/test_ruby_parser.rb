@@ -292,6 +292,13 @@ module TestRubyParserShared
     assert_parse rb, pt
   end
 
+  def test_begin_else_return_value
+    rb = "begin; else 2; end"
+    pt = s(:block, s(:lit, 2))
+
+    assert_parse rb, pt
+  end
+
   def test_bug_comment_eq_begin
     rb = "\n\n#\n=begin\nblah\n=end\n\n"
     pt = nil
