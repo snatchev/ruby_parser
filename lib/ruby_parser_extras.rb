@@ -1041,7 +1041,7 @@ module RubyParserStuff
   def remove_begin node
     oldnode = node
     if node and :begin == node[0] and node.size == 2 then
-      node = node[-1]
+      node = node[-1] || s(:nil)
       node.line = oldnode.line
     end
     node

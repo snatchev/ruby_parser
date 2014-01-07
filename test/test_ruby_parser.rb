@@ -294,7 +294,7 @@ module TestRubyParserShared
 
   def test_begin_else_return_value
     rb = "begin; else 2; end"
-    pt = s(:block, s(:lit, 2))
+    pt = s(:block, s(:nil), s(:lit, 2))
 
     assert_parse rb, pt
   end
